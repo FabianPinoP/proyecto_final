@@ -64,6 +64,6 @@ class ParkingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def parking_params
-      params.require(:parking).permit(:address, :description, :city, :price, :size, :town, :references)
+      params.require(:parking).permit(:address, :description, :city, :price, :size, :town)
     end
 end
