@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'users/:id', to: 'dashboards#update_status', as: :update_status
 
   get 'dashboard/', to: 'dashboards#index'
+  get 'public_parkings/', to: 'dashboards#parking'
 
   root 'parkings#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

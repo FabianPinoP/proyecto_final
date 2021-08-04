@@ -3,6 +3,11 @@ class DashboardsController < ApplicationController
     def index
         @users = User.all
     end
+
+    def parking
+      @parkings = Parking.all
+    end
+    
     def destroy
         User.find(params[:id]).destroy
         flash[:success] = "User destroyed."
