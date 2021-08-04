@@ -10,6 +10,7 @@
       <th>Admin</th>
 
 
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,8 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.admin %></td>
+        <td><%= link_to 'Change Status', update_status_path(user.id), class:"btn btn-success"%></td>
+        <td><%= button_to "Cancel account", destroy_user_path(user.id), data: { confirm: "Are you sure?" }, method: :delete %></p></td>
       </tr>
     <% end %>
   </tbody>
