@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :parkings
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
   get 'dashboard/', to: 'dashboards#index'
 
