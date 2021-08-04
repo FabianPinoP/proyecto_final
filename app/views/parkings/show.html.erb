@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @parking.address %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @parking.description %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @parking.city %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @parking.price %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @parking.size %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @parking.town %>
+</p>
+
+<p>
+  <strong>References:</strong>
+  <%= @parking.references %>
+</p>
+
+<%= link_to 'Edit', edit_parking_path(@parking) %> |
+<%= link_to 'Back', parkings_path %>
