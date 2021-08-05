@@ -41,6 +41,14 @@
                 <div class="fa fa-cog"></div>
                 <b>Account settings</b>
               <% end %>
+              <% if current_user.admin?%>
+                <%= link_to dashboard_path, class: "dropdown-item" do %>
+                  <div class="fas fa-sliders-h"></div>
+                  <b>Dashboard</b>
+                <% end %>
+                
+                <% end %>
+                
               <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
                 <div class="fa fa-sign-out-alt"></div>
                 <b>Sign out</b>

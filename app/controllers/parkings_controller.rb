@@ -1,4 +1,5 @@
 class ParkingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_parking, only: %i[ show edit update destroy ]
 
   # GET /parkings or /parkings.json
