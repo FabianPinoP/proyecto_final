@@ -14,8 +14,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-success">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
-      <i class="fas fa-flag"></i>
-      Brand
+      <%= fa_icon('parking', class: 'my-class', size: '2x') %>      
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -24,7 +23,7 @@
       <ul class="navbar-nav me-auto">
         <%= link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
           <div class="fa fa-home"></div>
-          Home
+          Parkings
         <% end %>
       </ul>
       <ul class="navbar-nav ms-auto">
