@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :size %>
-    <%= form.number_field :size %>
+    <%= form.select :size, Parking.sizes.keys.to_a %>
   </div>
 
   <div class="field">
