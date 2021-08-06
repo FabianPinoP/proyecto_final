@@ -9,6 +9,7 @@
       <th>Price</th>
       <th>Size</th>
       <th>Town</th>
+      <th>Like</th>
 
       <th colspan="3"></th>
     </tr>
@@ -23,6 +24,11 @@
         <td><%= parking.price %></td>
         <td><%= parking.size %></td>
         <td><%= parking.town %></td>
+        <% if current_user %>
+          <td><%= content_tag "div", id: "like-link-#{parking.id}" do %>
+            <%= render 'parkings/like_link', parking: parking %>
+          <% end %></td>
+        <% end %>
         <td><%= link_to 'Show', parking %></td>
         <td><%= link_to 'Edit', edit_parking_path(parking) %></td>
         <td><%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
