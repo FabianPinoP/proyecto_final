@@ -1,3 +1,15 @@
+<div class='container'>
+<% if user_signed_in? %>
+<%= form_tag({:controller => "parkings", :action => "index"}, :method => :get) do %>
+    <%= text_field_tag "searchbox", params[:searchbox] %>
+    <%= submit_tag "Buscar", :name => nil %>
+    <% end %>
+
+<% end %>
+
+<div>
+
+
 <div class = 'text-center'>
 
     <h5> Hola bienvenido te damos las gracias por visitarnos pero esta app aun esta en construcción que tengas un buen dia</h5>

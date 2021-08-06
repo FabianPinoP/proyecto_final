@@ -5,7 +5,13 @@ class ParkingsController < ApplicationController
   # GET /parkings or /parkings.json
   def index
     @parkings = Parking.all
+    @parkings = Parking.search(params[:searchbox])
+      respond_to do |format|
+        format.html 
+      end
   end
+
+
 
   # GET /parkings/1 or /parkings/1.json
   def show
