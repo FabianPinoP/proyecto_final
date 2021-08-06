@@ -1,3 +1,7 @@
+
+<%= render 'devise/registrations/modal' %>
+
+
 <div class='container'>
 <% if user_signed_in? %>
 <%= form_tag({:controller => "parkings", :action => "index"}, :method => :get) do %>
