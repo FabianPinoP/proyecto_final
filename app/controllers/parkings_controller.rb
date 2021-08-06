@@ -11,6 +11,20 @@ class ParkingsController < ApplicationController
       end
   end
 
+  def like
+    @parking = Parking.find(params[:id])
+    if current_user.voted_up_on? @parking
+      @parking.downvote_by current_user
+    elsif current_user.voted_down_on? @parking
+      @parking.upvote_by current_user
+    else #not voted
+      @parking.upvote_by current_user
+    end
+    respond_to do |format|
+     format.js
+    end 
+  end
+
 
 
   # GET /parkings/1 or /parkings/1.json

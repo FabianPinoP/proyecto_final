@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :parkings
+  resources :parkings do
+    member do
+      patch "like", to: "parkings#like"
+    end
+  end
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
