@@ -1,20 +1,21 @@
 <%= link_to like_parking_path(parking), method: :patch, remote: true, id: "like-link-#{parking.id}" do %>
   <% if current_user.voted_up_on?(parking) %>
-    UP voted
-    <b>
-      <%= parking.cached_votes_score %>
-    </b>
-    DOWN vote
+    <i class="fas fa-thumbs-up"></i>
+     <b>
+      <%= parking.cached_votes_up %>
+     </b> 
+    
   <% elsif current_user.voted_down_on?(parking) %>
-    UP vote
-    <b>
-      <%= parking.cached_votes_score %>
-    </b>
-    DOWN voted
+   
+     <b> 
+      <%= parking.cached_votes_up %>
+    </b> 
+    <br>
+    <i class="fas fa-thumbs-down"></i>
   <% else %>
     UP
     <b>
-      <%= parking.cached_votes_score %>
+      <%= parking.cached_votes_up %>
     </b>
     DOWN
   <% end %>
