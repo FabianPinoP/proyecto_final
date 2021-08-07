@@ -28,9 +28,13 @@
           <div class="fas fa-handshake"></div>
           About
         <% end %> 
-       
+        <% if user_signed_in? %>
+          <%= form_tag({:controller => "parkings", :action => "index"}, :method => :get) do %>
+            <%= text_field_tag "searchbox", params[:searchbox] %>
+            <%= submit_tag "Buscar", :name => nil %>
+          <% end %>
+        <% end %>       
       </ul>
-      
       <ul class="navbar-nav ms-auto " id='burger'>
       
         <% if current_user %>
