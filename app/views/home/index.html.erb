@@ -1,3 +1,7 @@
+
+
+
+
 <div class='container'>
 <% if user_signed_in? %>
 <%= form_tag({:controller => "parkings", :action => "index"}, :method => :get) do %>
@@ -36,26 +40,6 @@
         También puedes añadir fácilmente un nuevo aparcamiento y ponerlo en venta u arriendo.    
     </div>
 </div>
-<div class = 'container'>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="apps-de-parking.jpg" class="d-block w-100" alt="estacionamiento subterraneo">
-            </div>
-            <div class="carousel-item">
-            <img src="parking.jpg" class="d-block w-100" alt="estacionamiento al aire libre">
-            </div>
-            <div class="carousel-item">
-            <img src="apps-de-parking_2.jpg" class="d-block w-100" alt="estacionamiento con vehiculos de distintos">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
+
+
+<%= render 'carrousel' %>
