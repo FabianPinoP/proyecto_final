@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users_dashboards/index'
+  get 'users_dashboards/edit'
+  get 'users_dashboards/update'
   resources :parkings do
     member do
       patch "like", to: "parkings#like"
