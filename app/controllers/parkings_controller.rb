@@ -5,6 +5,8 @@ class ParkingsController < ApplicationController
   # GET /parkings or /parkings.json
   def index
     @parkings = Parking.all
+
+
     @parkings = Parking.search(params[:searchbox])
       respond_to do |format|
         format.html 
@@ -85,6 +87,6 @@ class ParkingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def parking_params
-      params.require(:parking).permit(:address, :description, :city, :price, :size, :town, :size_parking)
+      params.require(:parking).permit(:address, :description, :city, :price, :size, :town, :size_parking, :image)
     end
 end

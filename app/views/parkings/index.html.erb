@@ -1,40 +1,48 @@
 <h1>Parkings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>Description</th>
-      <th>City</th>
-      <th>Price</th>
-      <th>Size</th>
-      <th>Town</th>
-      <th>Like</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @parkings.each do |parking| %>
-      <tr>
-        <td><%= parking.address %></td>
-        <td><%= parking.description %></td>
-        <td><%= parking.city %></td>
-        <td><%= parking.price %></td>
-        <td><%= parking.size %></td>
-        <td><%= parking.town %></td>
-        <% if current_user %>
-          <td><%= content_tag "div", id: "like-link-#{parking.id}" do %>
-            <%= render 'parkings/like_link', parking: parking %>
-          <% end %></td>
-        <% end %>        
-        <td><%= link_to 'Show', parking %></td>
-        <td><%= link_to 'Edit', edit_parking_path(parking) %></td>
-        <td><%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+
+<% @parkings.each do |parking| %>
+
+
+  <div class='container '>
+    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+      <div class="col ">
+       <div class="card  shadow-lg p-3 mb-5 bg-body rounded">
+            <%= image_tag parking.image.variant(resize: "200x200" ), :class => 'card-img-top'    %>    
+              <div class="card-body">
+              <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
+              <p class="card-text"><%= parking.description %></p>
+              <p class="card-text"><%= parking.address %> / <%= parking.town %> / <%= parking.city %></p>
+              <hr>
+              <p class="card-text" ><%= parking.price %></p>
+                <% if current_user %>
+                  <%= content_tag "div", id: "like-link-#{parking.id}" do %>
+                  <%= render 'parkings/like_link', parking: parking %>
+                  <% end %></td>
+                <% end %> 
+              <hr>
+              <p class="card-text" >
+                <% if current_user %>
+                  <%= link_to 'Show', parking %></td>
+                  <%= link_to 'Edit', edit_parking_path(parking) %>
+                  <%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %>  
+                <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                    
+<% end %>
+
+
+      
+      
+
+
 
 <br>
 

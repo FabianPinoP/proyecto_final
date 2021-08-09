@@ -1,4 +1,8 @@
 class Parking < ApplicationRecord
+
+
+   has_one_attached :image
+
    acts_as_votable
     enum size: %i[Small Medium Large Plus ]
 
