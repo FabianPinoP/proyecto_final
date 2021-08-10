@@ -1,41 +1,43 @@
 <h1>Parkings</h1>
 
 <%= link_to 'New Parking', new_parking_path %>
-<% @parkings.each do |parking| %>
 
 
-  <div class='container '>
-    <div class="row row-cols-1 row-cols-md-3 g-4 ">
-      <div class="col ">
-       <div class="card  shadow-lg p-3 mb-5 bg-body rounded">
-            <%= image_tag parking.image.variant(resize: "200x200" ), :class => 'card-img-top'    %>    
-              <div class="card-body">
-              <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
-              <p class="card-text"><%= parking.description %></p>
-              <p class="card-text"><%= parking.address %> / <%= parking.town %> / <%= parking.city %></p>
-              <hr>
-              <p class="card-text" ><%= parking.price %></p>
-                <% if current_user %>
+<br>
+<div class="row">
+  <div class="col-md-8 offset-2">
+    <div class="container">
+      <div class="row">
+        <% @parkings.each do |parking| %>
+          <div class="col-md-4">
+            <div class="card">
+              <%= image_tag parking.image.variant(resize: "200x200" ), :class => 'card-img-top' %> 
+              <div class="card-block">
+                <h5 class="card-title">
+                <div class="card-text">
+                  <div class="badge badge-primary"></div>
+                  <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
+                  <p class="card-text"><%= parking.description %></p>
+                  <p class="card-text"><%= parking.address %> / <%= parking.town %> / <%= parking.city %></p>
+                 <p class="card-text" ><%= parking.price %></p>
+                 <% if current_user %>
                   <%= content_tag "div", id: "like-link-#{parking.id}" do %>
                   <%= render 'parkings/like_link', parking: parking %>
                   <% end %></td>
                 <% end %> 
-                <%= button_to "Add to cart", line_items_path(:parking_id => parking.id) %>
-              <hr>
-              <p class="card-text" >
-                <% if current_user %>
-                  <%= link_to 'Show', parking %></td>
-                  <%= link_to 'Edit', edit_parking_path(parking) %>
-                  <%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %>  
-                <% end %>
-            </p>
+                </div>
+                <div class="row float-right">
+                  <div class="col-md-12">                  
+                    <%= button_to "Add to cart", line_items_path(:parking_id => parking.id) %>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
-                    
-<% end %>
+</div>
 
-<br>
 
