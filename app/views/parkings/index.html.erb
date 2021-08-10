@@ -25,7 +25,10 @@
               <% end %>
               <div class="row float-right">
                 <div class="col-md-12">
-                  <%# <%= button_to "Add to cart", line_items_path(:parking_id => parking.id) %> %>
+                  <%= form_for :cart, url: cart_path, method: :put do |f| %>
+                    <%= f.hidden_field :parking_id, value: parking.id %>
+                    <%= f.submit "Add to cart" %>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -34,5 +37,4 @@
       <% end %>
     </div>
   </div>
-</div>
 </div>

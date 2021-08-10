@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_08_192705) do
+ActiveRecord::Schema.define(version: 2021_08_10_223928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,26 @@ ActiveRecord::Schema.define(version: 2021_08_08_192705) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "parking_id"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["parking_id"], name: "index_order_items_on_parking_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "number"
+    t.integer "total"
+    t.string "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "parkings", force: :cascade do |t|
@@ -93,5 +113,8 @@ ActiveRecord::Schema.define(version: 2021_08_08_192705) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "parkings"
+  add_foreign_key "orders", "users"
   add_foreign_key "parkings", "users"
 end

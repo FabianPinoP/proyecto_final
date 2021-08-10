@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :parkings
+  has_many :orders
 
   acts_as_voter
   # Include default devise modules. Others available are:
