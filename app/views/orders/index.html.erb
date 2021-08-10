@@ -1,0 +1,9 @@
+<h2>All Orders</h2>
+
+<% @orders.each do |order| %>
+
+    <% order.line_items.each do |item| %>
+    <li><%= item.quantity %> x <%= item.parking %></li>
+    <% end %>
+  </ul>
+<% end

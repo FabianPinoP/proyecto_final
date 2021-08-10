@@ -1,5 +1,6 @@
 <h1>Parkings</h1>
 
+<<<<<<< HEAD
 
 
 
@@ -43,6 +44,45 @@
       
 
 
+=======
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Description</th>
+      <th>City</th>
+      <th>Price</th>
+      <th>Size</th>
+      <th>Town</th>
+      <th>Like</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parkings.each do |parking| %>
+      <tr>
+        <td><%= parking.address %></td>
+        <td><%= parking.description %></td>
+        <td><%= parking.city %></td>
+        <td><%= parking.price %></td>
+        <td><%= parking.size %></td>
+        <td><%= parking.town %></td>
+        <% if current_user %>
+          <td><%= content_tag "div", id: "like-link-#{parking.id}" do %>
+            <%= render 'parkings/like_link', parking: parking %>
+          <% end %></td>
+        <% end %>        
+        <td><%= link_to 'Show', parking %></td>
+        <td><%= link_to 'Edit', edit_parking_path(parking) %></td>
+        <td><%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to "Add to cart", line_items_path(:parking_id => parking.id) %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+>>>>>>> shoppingcart
 
 <br>
 

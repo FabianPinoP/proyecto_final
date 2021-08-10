@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_08_08_192705) do
+=======
+ActiveRecord::Schema.define(version: 2021_08_08_004117) do
+>>>>>>> shoppingcart
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -36,6 +41,8 @@ ActiveRecord::Schema.define(version: 2021_08_08_192705) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+=======
+>>>>>>> shoppingcart
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -120,7 +127,10 @@ ActiveRecord::Schema.define(version: 2021_08_08_192705) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+<<<<<<< HEAD
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+=======
+>>>>>>> shoppingcart
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "parkings"

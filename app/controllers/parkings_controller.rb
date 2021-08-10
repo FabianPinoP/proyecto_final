@@ -40,11 +40,13 @@ class ParkingsController < ApplicationController
 
   # GET /parkings/1/edit
   def edit
+    @parking = Parking.find(params[:id])
   end
 
   # POST /parkings or /parkings.json
   def create
     @parking = Parking.new(parking_params)
+    @parking = Parking.create(parking_params)
 
     respond_to do |format|
       if @parking.save
