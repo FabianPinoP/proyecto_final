@@ -69,3 +69,4 @@ gem 'omniauth-facebook', '~> 8.0'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 gem "image_processing"
 gem 'faker'
+gem 'chartkick', '~> 4.0', '>= 4.0.5'

@@ -46,7 +46,7 @@ class ParkingsController < ApplicationController
   # POST /parkings or /parkings.json
   def create
     @parking = Parking.new(parking_params)
-    @parking = Parking.create(parking_params)
+    @parking.user_id = current_user.id
 
     respond_to do |format|
       if @parking.save
@@ -89,6 +89,6 @@ class ParkingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def parking_params
-      params.require(:parking).permit(:address, :description, :city, :price, :size, :town, :size_parking, :image)
+      params.require(:parking).permit(:address, :description, :city, :price, :size, :town, :size_parking, :image, :user_id)
     end
 end

@@ -12,7 +12,7 @@ class LineItemsController < ApplicationController
           @line_item.cart = current_cart
           @line_item.parking = chosen_parking
         end
-
+        
         @line_item.save
 
 

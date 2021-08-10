@@ -1,2 +1,35 @@
-<h1>UsersDashboards#index</h1>
-<p>Find me in app/views/users_dashboards/index.html.erb</p>
+<div class="row">
+  <div class="col-md-8 offset-2">
+    <div class="container">
+      <div class="row">
+        <% @user_parkings.each do |parking| %>
+          <div class="col-md-4 ">
+            <div class="card shadow-lg p-3 mb-5 bg-body rounded ">
+              <%= image_tag parking.image.variant(resize: "200x200" ), :class => 'card-img-top' %>
+              <div class="card-body">
+                <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
+                <div class="badge badge-primary"></div>
+                <p class="card-text"><%= parking.description %></p>
+                <hr>
+                <p class="card-text"><%= parking.address %> / <%= parking.town %> / <%= parking.city %></p>
+                <hr>
+                <p class="card-text" >Price: $<%= parking.price %></p>
+                <hr>
+                <% if current_user %>
+                  <%= content_tag "div", id: "like-link-#{parking.id}" do %>
+                    <%= render 'parkings/like_link', parking: parking %>
+                  <% end %></td>
+              <% end %>
+              <div class="row float-right">
+                <div class="col-md-12">
+                  <%= button_to "Add to cart", line_items_path(:parking_id => parking.id) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
