@@ -48,6 +48,10 @@
                 <div class="far fa-edit"></div>
                 <b>Account settings</b>
               <% end %>
+              <%= link_to cart_path, class: "dropdown-item #{'active fw-bold' if current_page?(cart_path)}" do %>
+                <div class="fa fa-shopping-cart"></div>
+                <b>Shopping Cart</b>
+              <% end %>
               <% if current_user.admin?%>
                 <%= link_to dashboard_path, class: "dropdown-item" do %>
                   <div class="fas fa-sliders-h"></div>
