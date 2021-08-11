@@ -20,9 +20,12 @@
                     <%= render 'parkings/like_link', parking: parking %>
                   <% end %></td>
               <% end %>
+              <% if current_user %>
+                <%= link_to 'Edit', edit_parking_path(parking) %>
+                <%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
               <div class="row float-right">
                 <div class="col-md-12">
-                  <%# <%= button_to "Add to cart", line_items_path(:parking_id => parking.id) %> %>
                 </div>
               </div>
             </div>
