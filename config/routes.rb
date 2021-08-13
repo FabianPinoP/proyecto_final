@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'users_dashboards/index'
   get 'users_dashboards/edit'
   get 'users_dashboards/update'
+  get 'mercado-pago/:id', to: 'carts#mercado_pago', as: 'mercado-pago'
+  get 'payment_success', to: 'carts#payment_success', as: 'payment_success'
   resources :parkings do
     member do
       patch "like", to: "parkings#like"
