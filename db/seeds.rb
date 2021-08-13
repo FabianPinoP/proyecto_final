@@ -18,7 +18,7 @@ Parking.destroy_all
     town: Faker::Address.state,
     city: Faker::Address.city,
     address: Faker::Address.street_address,
-    user_id: 2
+    user_id: 1
 )
 
     p.image.attach(io: File.open('public/wp4896663.jpg'), filename: 'wp4896663.jpg')
