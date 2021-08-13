@@ -1,11 +1,12 @@
 <div class="card">
   <div class="card-header bg-dark text-light">
     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-    <a href="<%= root_url%>" class="btn btn-outline-info btn-sm pull-right">Continue Shopping</a>
+    <a href="<%= parkings_url%>" class="btn btn-outline-info btn-sm pull-right">Continue Shopping</a>
     <div class="clearfix"></div>
   </div>
   <div class="card-body">
     <% @order.order_items.includes(:parking).each do |item| %>
+    
       <div class="row">
         <div class="col-xs-2 col-md-2">
           <%= image_tag item.parking.image.variant(resize: "200x200" ), :class => 'card-img-top' %>
@@ -25,16 +26,9 @@
         </div>
       </div>
       <hr>
-    <% end %>
+     <% end %>
   </div>
   <div class="card-footer">
-    <a href="#" class="btn btn-success pull-right">Pay</a>
-    <div class="pull-right" style="margin: 5px">
-      Total: $<b><%= @order.total %></b>
-      <%# <%= form_for :cart, url: pay_with_paypal_cart_path, method: :post do |f| %> aun no definido %>
-        <%# <%= f.hidden_field :order_id, value: @order.id %> aun no definido %>
-        <%# <%= f.submit "Pay" %>aun no definido %>
-        <%# <% end %> aun no definido %>
-      </div>
-    </div>
+  <%= link_to 'pay', mercado_pago_path(@order.id), class:"btn btn-success pull-right" %>
+  Total: $<b><%= @order.total %></b>
   </div>
