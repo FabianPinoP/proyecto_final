@@ -6,6 +6,14 @@ class CartsController < ApplicationController
         current_order.add_parking(parking_id)
         redirect_to root_path,  notice: "parking added seccessfuly"
     end
+
+    def delete_item
+        order_item_id = params[:id] 
+        order_cart =  OrderItem.where(id: order_item_id, order_id: current_order.id ).first
+        order_cart.destroy
+        current_order.price_total
+        redirect_to cart_path
+    end
     
     def show
     @order = current_order
@@ -47,6 +55,7 @@ class CartsController < ApplicationController
 
         redirect_to url_pay
     end
+
 
     def payment_success
         @status = params[:status]

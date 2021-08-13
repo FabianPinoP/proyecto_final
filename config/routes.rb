@@ -24,7 +24,11 @@ Rails.application.routes.draw do
 
   get 'about', to: 'home#index'
 
+
   root 'home#index'
-  resource :cart, only: [:show, :update]
+  resource :cart, only: [:show, :update] do
+    get 'carts/:id/delete_item', to: 'carts#delete_item', as: 'delete_item'
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

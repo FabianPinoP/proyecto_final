@@ -18,6 +18,8 @@
         <div class="col-xs-6 col-md-4 row">
           <div class="col-xs-6 col-md-6 text-right" style="padding-top: 5px">
             <h6><span class="text-muted">$</span></strong><strong><%= item.price%> </h6>
+            <%= link_to 'Delete item', delete_item_cart_path(item.id)    %>
+
           </div>
           <div class="col-xs-4 col-md-4">
           </div>
