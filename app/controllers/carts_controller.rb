@@ -4,7 +4,7 @@ class CartsController < ApplicationController
     def update
         parking_id = params[:cart][:parking_id]
         current_order.add_parking(parking_id)
-        redirect_to root_path,  notice: "parking added seccessfuly"
+        redirect_to parkings_path,  notice: "parking added seccessfuly"
     end
 
     def delete_item
@@ -20,7 +20,6 @@ class CartsController < ApplicationController
     end
 
     def mercado_pago
-        #puts "++++++llegando a pagar con id: #{params}" 
         @order = Order.find(params[:id])
         # SDK de Mercado Pago
         require 'mercadopago'
@@ -48,7 +47,6 @@ class CartsController < ApplicationController
             }
         preference_response = sdk.preference.create(preference_data)
         preference = preference_response[:response]
-        #puts "+++response:#{preference}"
         url_pay = preference["sandbox_init_point"]
         # Este valor reemplazará el string "<%= @preference_id %>" en tu HTML
         @preference_id = preference['id']
