@@ -50,6 +50,7 @@ class ParkingsController < ApplicationController
 
     respond_to do |format|
       if @parking.save
+        ParkingMailer.parking_create.deliver_later
         format.html { redirect_to @parking, notice: "Parking was successfully created." }
         format.json { render :show, status: :created, location: @parking }
       else
