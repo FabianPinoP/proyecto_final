@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'users_dashboards/index'
   get 'users_dashboards/edit'
   get 'users_dashboards/update'
+
+
   get 'mercado-pago/:id', to: 'carts#mercado_pago', as: 'mercado-pago'
   get 'payment_success', to: 'carts#payment_success', as: 'payment_success'
   resources :parkings do
@@ -28,6 +30,10 @@ Rails.application.routes.draw do
   root 'home#index'
   resource :cart, only: [:show, :update] do
     get 'carts/:id/delete_item', to: 'carts#delete_item', as: 'delete_item'
+  end
+
+  resource :users_dashboard do
+    get 'users_dashboards/:id/delete_item_dashboard', to: 'users_dashboards#delete_item_dashboard', as: 'delete_item_dashboard'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

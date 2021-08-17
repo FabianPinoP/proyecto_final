@@ -1,38 +1,48 @@
-<div class="row">
-  <div class="col-md-8 offset-2">
-    <div class="container">
+<div class='container'>
+<h2> outstanding</h2>
+
+<div class="card">
+  <div class="card-header bg-dark text-light">
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    <a href="<%= parkings_url%>" class="btn btn-outline-info btn-sm pull-right">Continue Shopping</a>
+    <div class="clearfix"></div>
+  </div>
+  <div class="card-body">
+    <% @order.order_items.includes(:parking).each do |item| %>
+    
       <div class="row">
-        <% @user_parkings.each do |parking| %>
-          <div class="col-md-4 ">
-            <div class="card shadow-lg p-3 mb-5 bg-body rounded ">
-              <%= image_tag parking.image.variant(resize: "200x200" ), :class => 'card-img-top' %>
-              <div class="card-body">
-                <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
-                <div class="badge badge-primary"></div>
-                <p class="card-text"><%= parking.description %></p>
-                <hr>
-                <p class="card-text"><%= parking.address %> / <%= parking.town %> / <%= parking.city %></p>
-                <hr>
-                <p class="card-text" >Price: $<%= parking.price %></p>
-                <hr>
-                <% if current_user %>
-                  <%= content_tag "div", id: "like-link-#{parking.id}" do %>
-                    <%= render 'parkings/like_link', parking: parking %>
-                  <% end %></td>
-              <% end %>
-              <% if current_user %>
-                <%= link_to 'Edit', edit_parking_path(parking) %>
-                <%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
-              <div class="row float-right">
-                <div class="col-md-12">
-                </div>
-              </div>
-            </div>
+        <div class="col-xs-2 col-md-2">
+          <%= image_tag item.parking.image.variant(resize: "200x200" ), :class => 'card-img-top' %>
+        </div>
+        <div class="col-xs-4 col-md-6">
+          <h4 class="product-name"><strong><%= item.parking.address %></strong></h4>
+          <h4><small><%= item.parking.description %></small></h4>
+        </div>
+        <div class="col-xs-6 col-md-4 row">
+          <div class="col-xs-6 col-md-6 text-right" style="padding-top: 5px">
+            <h6><span class="text-muted">$</span></strong><strong><%= item.price%> </h6>
+            <%= link_to 'Delete item', delete_item_dashboard_users_dashboard_path(item.id) %>
+
+          </div>
+          <div class="col-xs-4 col-md-4">
+          </div>
+          <div class="col-xs-2 col-md-2">
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+      <hr>
+     <% end %>
   </div>
+
+
 </div>
-</div>
+
+
+
+
+<hr>
+
+<%= render 'chart' %>
+<hr>
+<%= render 'my_parkings_lot' %>
+
