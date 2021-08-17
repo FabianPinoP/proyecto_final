@@ -71,3 +71,5 @@ gem "image_processing"
 gem 'faker'
 gem 'chartkick', '~> 4.0', '>= 4.0.5'
 gem 'mercadopago-sdk', '~> 2.0', '>= 2.0.2'
+gem 'sentry-ruby', '~> 4.6', '>= 4.6.5'
+gem 'sentry-rails', '~> 4.6', '>= 4.6.5'
