@@ -33,9 +33,15 @@
             <%= text_field_tag "searchbox", params[:searchbox] %>
             <%= submit_tag "Buscar", :name => nil %>
           <% end %>
-        <% end %>       
+        <% end %>
+    
       </ul>
+
       <ul class="navbar-nav ms-auto " id='burger'>
+         <%= link_to cart_path, class: "nav-link  #{'active fw-bold' if current_page?(cart_path)}" do %>
+          <div class="fa fa-shopping-cart"></div>
+        <b>Shopping Cart</b>
+        <% end %> 
       
         <% if current_user %>
           <li class="nav-item dropdown">
@@ -48,18 +54,16 @@
                 <div class="far fa-edit"></div>
                 <b>Account settings</b>
               <% end %>
-              <%= link_to cart_path, class: "dropdown-item #{'active fw-bold' if current_page?(cart_path)}" do %>
-                <div class="fa fa-shopping-cart"></div>
-                <b>Shopping Cart</b>
+              <%= link_to users_dashboards_index_path, class: "dropdown-item" do %>
+                <div class="fas fa-sliders-h"></div>
+                <b>Dashboard User</b>
               <% end %>
               <% if current_user.admin?%>
                 <%= link_to dashboard_path, class: "dropdown-item" do %>
                   <div class="fas fa-sliders-h"></div>
-                  <b>Dashboard</b>
-                <% end %>
-                
-                <% end %>
-                
+                  <b>Dashboard Admin</b>
+                <% end %>  
+              <% end %>
               <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
                 <div class="fa fa-sign-out-alt"></div>
                 <b>Sign out</b>
