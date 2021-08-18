@@ -1,28 +1,26 @@
-# README
+# PARKING LOTS APP
+
+## project in development
+
+use this app to: buy and sell parking spaces in a simple and fast way, you can upload your photos and edit your publications quickly, without complications
+
+!(public/portada.png)
+
+## Installation
+
+- Ruby on Rails 5 -- Ruby 2.7.4
+
+- bundle install
+- rails db:migrate
+- rails db:seed
+
+add yarn add chartkick
+add yarn add fontawesome
+
+# APP Parkings lots
+
+- available https://sheltered-beach-45001.herokuapp.com/
 
 \*app heroku https://sheltered-beach-45001.herokuapp.com/
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-- Ruby version
-
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
 
 # proyecto_final
