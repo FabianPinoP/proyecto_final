@@ -1,19 +1,20 @@
 # PARKINGS LOTS
 
-## project in development
+## Project in development
 
-use this app to: buy and sell parking spaces in a simple and fast way, you can upload your photos and edit your publications quickly, without complications
+Use this app to: buy and sell parking spaces in a simple and fast way, you can upload your photos and edit your publications quickly, without complications.
 
 ### Setup 🔧
 
+```
 - bundle install
 - rails db:migrate
 - rails db:seed
+- add yarn add chartkick
+- add yarn add fontawesome
+```
 
-add yarn add chartkick
-add yarn add fontawesome
-
-### prerequisites 📋
+### pre-requisites 📋
 
 ```
 - Ruby on Rails 5 -- Ruby 2.7.4
@@ -24,22 +25,25 @@ add yarn add fontawesome
 
 this web application is in heroku
 
-heroku login
-heroku create
-git push heroku 'branch'
-heroku run rails db:migrate
-heroku run rails db:seed
-herku open
+```
+
+- heroku login
+- heroku create
+- git push heroku 'branch'
+- heroku run rails db:migrate
+- heroku run rails db:seed
+- herku open
+```
 
 - available https://sheltered-beach-45001.herokuapp.com/
 
-## Construido con 🛠️
+## Built with 🛠️
 
 - [Ruby on Rails](https://rubyonrails.org/) - the framework web
 - [Yarn](https://yarnpkg.com/) - Dependency manager
 - [Heroku](https://heroku.com/apps) - deployment
 
-## Autores ✒️
+## Authors ✒️
 
 - **Juan pablo Alarcón** - developer - [juanpalarcon](https://github.com/juanpalarcon)
 - **Fabian Pino** - developer - [FabianPinoP](https://github.com/FabianPinoP)
