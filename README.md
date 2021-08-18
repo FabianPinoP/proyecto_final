@@ -4,7 +4,7 @@
 
 use this app to: buy and sell parking spaces in a simple and fast way, you can upload your photos and edit your publications quickly, without complications
 
-!(public/portada.png)
+!(/app/assets/images/portada.png)
 
 ## Installation
 
