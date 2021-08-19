@@ -1,11 +1,8 @@
 class UsersDashboardsController < ApplicationController
   def index
     @user_parkings = Parking.where(user_id: current_user)
-    # @user_orders = Order.find(order_id: current_order, user_id: current_user)
-    # @user_orders = Order.where(:state => "created")
-    # @user_orders = Order.where(params[:id])
+    @user_orders = current_user.orders.where(:state => "completed")
     @order = current_order
-
   end
 
   def delete_item_dashboard

@@ -41,4 +41,10 @@ class Order < ApplicationRecord
     end
     update_attribute(:total, sum)
   end
+  def update_order(payment_id, type)
+    self.payment_id = payment_id
+    self.payment_type = type
+    self.state = 'completed'
+    self.save!
+    end
 end

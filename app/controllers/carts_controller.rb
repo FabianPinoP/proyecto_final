@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
     before_action :authenticate_user!
+    
 
     def update
         parking_id = params[:cart][:parking_id]
@@ -53,11 +54,14 @@ class CartsController < ApplicationController
 
         redirect_to url_pay
     end
-
-
     def payment_success
         @status = params[:status]
-        @payment_id = params[:payment_id]
+        @payment_id = params[:payment_id] 
         @type = params[:payment_type]
-    end
+        if current_order.update_order(@payment_id, @type)
+            redirect_to root_path, notice: 'pago realizado'
+        else
+            redirect_to root_path, flash: 'pago no realizado'
+        end
+    end    
 end
