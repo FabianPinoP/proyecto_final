@@ -24,7 +24,7 @@ class CartsController < ApplicationController
         # SDK de Mercado Pago
         require 'mercadopago'
         # Agrega credenciales
-        sdk = Mercadopago::SDK.new('#')
+        sdk = Mercadopago::SDK.new(Rails.application.credentials.mercado_pago[:secret_key])
         # Crea un objeto de preferencia
         preference_data = {
                 items: [
