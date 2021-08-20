@@ -1,21 +1,32 @@
 class Parking < ApplicationRecord
 
-   belongs_to :user
-   has_one_attached :image
-   has_many :order_items
-   has_many :orders, through: :order_items
+  belongs_to :user
+  has_one_attached :image
+  has_many :order_items
+  has_many :orders, through: :order_items
 
 
 
-   acts_as_votable
-    enum size: %i[Small Medium Large Plus ]
+  acts_as_votable
+  enum size: %i[Small Medium Large Plus ]
 
-    def self.search(search)
+  def self.search(search)
+   	if search 
+      where('town LIKE ?', "%#{search}%")
+    else
+      Parking.all
+    end
+  end
 
-        if search 
-           where('town LIKE ?', "%#{search}%")
-         else
-            Parking.all
-         end
-       end
+  def visible_on_catalog?
+    parkings.each do |par|
+      if par.stock > 0
+        return true
+      else
+        false
+      end
+    end
+  end
+
+
 end
