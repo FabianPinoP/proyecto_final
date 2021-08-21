@@ -8,10 +8,10 @@ class ParkingsController < ApplicationController
     @parkings = Parking.where("stock >= 1")
 
 
-    # @parkings = Parking.search(params[:searchbox])
-    #   respond_to do |format|
-    #     format.html 
-    #   end
+    @parkings = Parking.search(params[:searchbox])
+      respond_to do |format|
+        format.html 
+      end
   end
 
 
