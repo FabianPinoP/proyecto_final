@@ -1,12 +1,36 @@
-<% @user_orders.each do |o| %>
-    <%= o.number %>
-    <%= o.payment_type %>
-    <%= o.updated_at %>
-    <% o.parkings.each do |p|%>
-        <%= p.address %>
-        <%= p.town %>
-        <%= p.city %>
-        <%= p.price %>
-        <%= p.size %>
-    <% end %>
-<% end %>
+
+<div class="row my-5">
+  <div class="col-md-8 offset-2">
+    <div class="container">
+    <div class="container"> 
+    <h2>my shopping</h2>
+    </div>
+
+      <div class="row">
+        <% @user_orders.each do |o| %>
+            <% o.parkings.each do |p|%>
+
+          <div class="col-md-4 ">
+            <div class="card shadow-lg p-3 mb-5 bg-body rounded ">
+              <%= image_tag p.image.variant(resize: "200x200" ), :class => 'card-img-top' %>
+              <div class="card-body">
+                <h5 class="card-title"><%= p.town %> Size: <%= p.size %></h5>
+                <div class="badge badge-primary"></div>
+                <hr>
+                <p class="card-text"><%= p.address %> </p>
+                <hr>
+                <p class="card-text" >Price: $<%= p.price %></p>
+                <hr>            
+              <div class="row float-right">
+                <div class="col-md-12">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
