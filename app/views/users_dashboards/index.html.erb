@@ -1,18 +1,8 @@
 
 <%= render 'outstanding' %>
 <hr>
-<% @user_orders.each do |o| %>
-    <%= o.number %>
-    <%= o.payment_type %>
-    <%= o.updated_at %>
-    <% o.parkings.each do |p|%>
-        <%= p.address %>
-        <%= p.town %>
-        <%= p.city %>
-        <%= p.price %>
-        <%= p.size %>
-    <% end %>
-<% end %>
+<%= render 'sale' %>
+<hr>
 <%= render 'chart' %>
 <hr>
 <%= render 'my_parkings_lot' %>

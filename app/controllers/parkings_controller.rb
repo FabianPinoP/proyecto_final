@@ -5,14 +5,14 @@ class ParkingsController < ApplicationController
   # GET /parkings or /parkings.json
   def index
 
-    @parkings = Parking.where("stock >= 1")
+    @parkings = Parking.where("stock = 1")
 
-
-    @parkings = Parking.search(params[:searchbox])
-      respond_to do |format|
-        format.html 
-      end
+    # @parkings = Parking.search(params[:searchbox])
+    #   respond_to do |format|
+    #     format.html 
+    #   end
   end
+
 
 
   def like
