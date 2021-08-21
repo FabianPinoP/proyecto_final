@@ -42,6 +42,7 @@ class Order < ApplicationRecord
     update_attribute(:total, sum)
   end
   def update_order(payment_id, type)
+    Parking.discount_stock(self.parkings)
     self.payment_id = payment_id
     self.payment_type = type
     self.state = 'completed'

@@ -18,15 +18,11 @@ class Parking < ApplicationRecord
     end
   end
 
-  def visible_on_catalog?
-    parkings.each do |par|
-      if par.stock > 0
-        return true
-      else
-        false
-      end
-    end
-  end
-
+ def self.discount_stock(parkings)
+	parkings.each do |par|
+		par.stock -= 1
+		par.save
+	end
+ end
 
 end

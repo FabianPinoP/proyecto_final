@@ -39,9 +39,9 @@ class CartsController < ApplicationController
                 ],
                 
                 back_urls: {
-                     success: 'https://sheltered-beach-45001.herokuapp.com/payment_success',
-                     failure: 'https://sheltered-beach-45001.herokuapp.com/',
-                     pending: 'https://sheltered-beach-45001.herokuapp.com/'
+                     success: 'http://localhost:3000//payment_success',
+                     failure: 'http://localhost:3000/',
+                     pending: 'http://localhost:3000/'
                  },
                  auto_return: 'approved'
                 

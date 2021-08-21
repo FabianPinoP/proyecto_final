@@ -5,7 +5,7 @@ class ParkingsController < ApplicationController
   # GET /parkings or /parkings.json
   def index
 
-    @parkings = Parking.where(:stock => 1)
+    @parkings = Parking.where("stock >= 1")
 
 
     # @parkings = Parking.search(params[:searchbox])
