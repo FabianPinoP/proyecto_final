@@ -1,4 +1,7 @@
 <%= form_with(model: parking, remote: true) do |form| %>
+  <div class="form-group">
+    <h4 class="control-label">Parking Information:</h4>
+  </div>
   <% if parking.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(parking.errors.count, "error") %> prohibited this parking from being saved:</h2>
@@ -11,43 +14,71 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+  <br>
+
+  <div class="item form-group">
+    <%= form.label :address, 'Address:' %>
+    <div class="input-group">
+      <%= form.text_field :address, {:class=> "form-control", :placeholder=>"Introduzca la direccion..."} %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <br>
+
+  <div class="item form-group">
+    <%= form.label :description, 'Description:' %>
+    <div class="input-group">
+      <%= form.text_area :description, {:class=> "form-control", :placeholder=>"Introduzca descripcion..."} %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
+  <br>
+
+  <div class="item form-group">
+    <%= form.label :city, 'City:' %>
+    <div class="input-group">
+      <%= form.text_field :city, {:class=> "form-control", :placeholder=>"Introduzca la cuidad..."} %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
+  <br>
+
+  <div class="item form-group">
+    <%= form.label :price, 'Price:' %>
+    <div class="input-group">
+      <%= form.text_field :price, {:class=> "form-control", :placeholder=>"Introduzca un precio..."} %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :size %>
-    <%= form.select :size, Parking.sizes.keys.to_a %>
+  <br>
+
+  <div class="item form-group">
+    <%= form.label :size, 'Size:' %>
+    <div class="input-group">
+      <%= form.select(:size, Parking.sizes.keys.to_a, {:prompt => 'Selecciona un tamaño'}, {class: "form-control"})  %>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :town %>
-    <%= form.text_field :town %>
-  </div>
+  <br>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image, direct_upload: true  %>
+  <div class="item form-group">
+    <%= form.label :town, 'Town:' %>
+    <div class="input-group">
+      <%= form.text_field :town, {:class=> "form-control", :placeholder=>"Introduzca una comuna.."} %>
+    </div>
   </div>
+  <br>
 
+  <div class="item form-group">
+    <%= form.label :image, 'Image:' %>
+    <div class="input-group">
+      <%= form.file_field :image, direct_upload: true %>
+    </div>
+  </div>
+  
+  <br>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => "btn btn-success" %>
   </div>
 <% end %>
