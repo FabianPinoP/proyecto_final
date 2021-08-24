@@ -5,18 +5,10 @@
       <%= parking.cached_votes_up %>
      </b> 
     
-  <% elsif current_user.voted_down_on?(parking) %>
-   
+  <% else current_user.voted_down_on?(parking) %>
+    <i class="fas fa-thumbs-down"></i>
      <b> 
       <%= parking.cached_votes_up %>
-    </b> 
-    <br>
-    <i class="fas fa-thumbs-down"></i>
-  <% else %>
-    UP
-    <b>
-      <%= parking.cached_votes_up %>
-    </b>
-    DOWN
+    </b>  
   <% end %>
 <% end %>

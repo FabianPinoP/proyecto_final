@@ -1,0 +1,8 @@
+// Add the dialog title
+$('#modal-parkings-title').html("New Parking");
+ 
+// Render the new form
+$('.modal-body-parkings').html('<%= j render "form", parking: @parking %>');
+ 
+// Show the dynamic dialog
+$('#modalParkings').modal("show");
