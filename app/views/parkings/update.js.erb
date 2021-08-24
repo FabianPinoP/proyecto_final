@@ -1,0 +1,3 @@
+$('#modalParkings').modal('toggle');
+document.getElementById('parking_<%= @parking.id %>').innerHTML = "<%= j render @parking %>"
+$('#modalParkingsShow').modal('toggle');

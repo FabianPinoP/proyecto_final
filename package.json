@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "chartkick": "^4.0.5"
+    "chartkick": "^4.0.5",
+    "jquery": "^3.6.0"
   }
 }

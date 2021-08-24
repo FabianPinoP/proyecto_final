@@ -1,4 +1,4 @@
-<%= form_with(model: parking, local: true) do |form| %>
+<%= form_with(model: parking, remote: true) do |form| %>
   <% if parking.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(parking.errors.count, "error") %> prohibited this parking from being saved:</h2>
@@ -41,7 +41,7 @@
     <%= form.text_field :town %>
   </div>
 
-    <div class="field">
+  <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image, direct_upload: true  %>
   </div>

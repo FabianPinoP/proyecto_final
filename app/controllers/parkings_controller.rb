@@ -55,9 +55,11 @@ class ParkingsController < ApplicationController
         ParkingMailer.parking_create.deliver_later
         format.html { redirect_to @parking, notice: "Parking was successfully created." }
         format.json { render :show, status: :created, location: @parking }
+        format.js {render :create} 
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @parking.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -68,9 +70,11 @@ class ParkingsController < ApplicationController
       if @parking.update(parking_params)
         format.html { redirect_to @parking, notice: "Parking was successfully updated." }
         format.json { render :show, status: :ok, location: @parking }
+        format.js { render :update}
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @parking.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

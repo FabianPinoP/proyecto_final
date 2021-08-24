@@ -1,40 +1,14 @@
 <h1>Parkings</h1>
-<%= link_to 'New Parking', new_parking_path %>
+<%= link_to 'New Parking', new_parking_path, remote: true %>
 <br>
 <div class="row">
   <div class="col-md-8 offset-2">
     <div class="container">
-      <div class="row">
+      <div id='parking_index' class="row">
         <% @parkings.each do |parking| %>
-          <div class="col-md-4 ">
-            <div class="card shadow-lg p-3 mb-5 bg-body rounded ">
-              <%= image_tag parking.image.variant(resize: "200x200" ), :class => 'card-img-top' %>
-              <div class="card-body">
-                <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
-                <div class="badge badge-primary"></div>
-                <p class="card-text"><%= parking.description %></p>
-                <hr>
-                <p class="card-text"><%= parking.address %> / <%= parking.town %> / <%= parking.city %></p>
-                <hr>
-                <p class="card-text" >Price: $<%= parking.price %></p>
-                <hr>
-                <% if current_user %>
-                  <%= content_tag "div", id: "like-link-#{parking.id}" do %>
-                    <%= render 'parkings/like_link', parking: parking %>
-                  <% end %></td>
-              <% end %>
-              <div class="row float-right">
-                <div class="col-md-12">
-                  <%= form_for :cart, url: cart_path, method: :put do |f| %>
-                    <%= f.hidden_field :parking_id, value: parking.id %>
-                    <%= f.submit "Add to cart" %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
+          <%= render 'parkings/parking', parking: parking %>
+        <% end %>
     </div>
   </div>
 </div>
+<%= render 'modal_parkings' %>
