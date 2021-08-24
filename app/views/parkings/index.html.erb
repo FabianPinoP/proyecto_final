@@ -1,14 +1,22 @@
-<h1>Parkings</h1>
-<%= link_to 'New Parking', new_parking_path, remote: true %>
-<br>
-<div class="row">
-  <div class="col-md-8 offset-2">
-    <div class="container">
-      <div id='parking_index' class="row">
-        <% @parkings.each do |parking| %>
-          <%= render 'parkings/parking', parking: parking %>
-        <% end %>
+
+  <h1>Parkings</h1>
+
+  <%= link_to 'New Parking', new_parking_path, remote: true %>
+  <br>
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <div class="container">
+        <div id='parking_index' class="row">
+          <% @parkings.each do |parking| %>
+            <%= render 'parkings/parking', parking: parking %>
+          <% end %>
+      </div>
     </div>
   </div>
+  <%= render 'modal_parkings' %>
+  
+<div class='container'>
+  <%= link_to_next_page @parkings, 'Next Page' %>
 </div>
-<%= render 'modal_parkings' %>
+
+
