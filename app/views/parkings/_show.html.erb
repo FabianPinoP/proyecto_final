@@ -1,0 +1,32 @@
+
+<%= image_tag @parking.image.variant(resize: "200x200" ), :class => 'card-img-top'%>
+  
+<hr>
+  
+  <strong>Address:</strong>
+  <%= @parking.address %>
+
+<hr>
+
+  <strong>Description:</strong>
+  <%= @parking.description %>
+
+<hr>
+
+  <strong>City:</strong>
+  <%= @parking.city %>
+
+<hr>
+
+  <strong>Town:</strong>
+  <%= @parking.town %>
+
+<hr>
+
+  <strong>Size:</strong>
+  <%= @parking.size %>
+
+<hr>
+  <h2><strong>Price:</strong>
+  $<%= @parking.price %></h2>
+

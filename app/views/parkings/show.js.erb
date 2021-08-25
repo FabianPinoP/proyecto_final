@@ -1,0 +1,4 @@
+$('#modal-parkings-title').html("<%= @parking.town %>");
+
+$('#modal-body-parkings').html('<%= j render "show" %>');
+$('#modalParkings').modal("show");
