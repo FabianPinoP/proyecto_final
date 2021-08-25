@@ -4,7 +4,7 @@
               <div class="card-body">
                 <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
                 <div class="badge badge-primary"></div>
-                <p class="card-text"><%= parking.description %></p>
+               
                 <hr>
                 <p class="card-text"><%= parking.address %> / <%= parking.town %> / <%= parking.city %></p>
                 <hr>
@@ -14,13 +14,17 @@
                   <%= content_tag "div", id: "like-link-#{parking.id}" do %>
                     <%= render 'parkings/like_link', parking: parking %>
                   <% end %></td>
-              <% end %>
-              <div class="row float-right">
-                <div class="col-md-12">
+                <% end %>
+                <br>
+              <div class="row d-flex justify-content-between">
+                <div class="col-md-6">
                   <%= form_for :cart, url: cart_path, method: :put do |f| %>
                     <%= f.hidden_field :parking_id, value: parking.id %>
-                    <%= f.submit "Add to cart" %>
+                    <%= f.submit "Add to cart ", class:"btn btn-success" %> 
                   <% end %>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                  <%= link_to 'See more', parking_path(parking.id), remote: true, class:"btn btn-primary"  %>
                 </div>
               </div>
             </div>
