@@ -8,6 +8,6 @@ class ParkingMailer < ApplicationMailer
   def parking_create
     @greeting = "esto es una prueba"
 
-    mail(to: "juanpablogast@gmail.com", subject: "esto es una prueba")  
+    mail(to: @user.email, subject: "esto es una prueba")  
   end
 end
