@@ -2,20 +2,10 @@ class ParkingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_parking, only: %i[ show edit update destroy like]
 
-  # GET /parkings or /parkings.json
   def index
-
-    # @parkings = Parking.where("stock = 1")
-    @parkings = Parking.where("stock = 1").order(:town => 'DESC').page params[:page]
-
-
-    # @parkings = Parking.search(params[:searchbox])
-    #   respond_to do |format|
-    #     format.html 
-    #   end
+    @q = Parking.ransack(params[:q])
+    @parkings = @q.result(distinct: true).where("stock = 1").order("created_at DESC").page(params[:page]).per(10)
   end
-
-
 
   def like
     @parking = Parking.find(params[:id])
