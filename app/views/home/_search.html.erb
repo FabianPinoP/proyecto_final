@@ -1,6 +1,0 @@
-<% if user_signed_in? %>
-  <%= form_tag({:controller => "parkings", :action => "index"}, :method => :get) do %>
-    <%= text_field_tag "searchbox", params[:searchbox] %>
-    <%= submit_tag "Buscar", :name => nil %>
-  <% end %>
-<% end %>

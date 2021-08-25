@@ -1,3 +1,7 @@
-<%= render 'search'  %>
+<% if user_signed_in?  %>
+    <%= render 'parkings/search' %>
+<% end %>
+
+
 <%= render 'info' %>
 <%= render 'carrousel' %>
