@@ -1,31 +1,31 @@
 <div id="parking_<%= parking.id%>" class="col-md-4 ">
-            <div class="card shadow-lg p-3 mb-5 bg-body rounded ">
-              <%= image_tag parking.image.variant(resize: "200x200" ), :class => 'card-img-top img-fluid'%>
-              <div class="card-body">
-                <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
-                <div class="badge badge-primary"></div>
+  <div class="card shadow-lg p-3 mb-5 bg-body rounded ">
+    <%= image_tag parking.image.variant(resize: "200x200" ), :class => 'card-img-top img-fluid'%>
+    <div class="card-body">
+      <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
+        <div class="badge badge-primary"></div>
                
-                <hr>
-                <p class="card-text"><%= parking.address %> / <%= parking.town %> / <%= parking.city %></p>
-                <hr>
-                <p class="card-text" >Price: $<%= parking.price %></p>
-                <hr>
-                <% if current_user %>
-                  <%= content_tag "div", id: "like-link-#{parking.id}" do %>
-                    <%= render 'parkings/like_link', parking: parking %>
-                  <% end %></td>
-                <% end %>
-                <br>
-              <div class="row d-flex justify-content-between d-block">
-                <div class="col-md-6">
-                  <%= form_for :cart, url: cart_path, method: :put do |f| %>
-                    <%= f.hidden_field :parking_id, value: parking.id %>
-                    <%= f.submit "Add to cart ", class:"btn btn-success p-2" %> 
-                  <% end %>
-                  <br>
-                  <%= link_to 'See more', parking_path(parking.id), remote: true, class:"btn btn-primary"  %>
-                </div>
-              </div>
-            </div>
+        <hr>
+        <p class="card-text"><%= parking.address %> / <%= parking.town %> / <%= parking.city %></p>
+        <hr>
+        <p class="card-text" >Price: $<%= parking.price %></p>
+        <hr>
+        <% if current_user %>
+          <%= content_tag "div", id: "like-link-#{parking.id}" do %>
+            <%= render 'parkings/like_link', parking: parking %>
+          <% end %></td>
+        <% end %>
+        <br>
+        <div class="row d-flex justify-content-between d-block">
+          <div class="col-md-6">
+            <%= form_for :cart, url: cart_path, method: :put do |f| %>
+              <%= f.hidden_field :parking_id, value: parking.id %>
+              <%= f.submit "Add to cart ", class:"btn btn-success p-2" %> 
+            <% end %>
+            <br>
+            <%= link_to 'See more', parking_path(parking.id), remote: true, class:"btn btn-primary"  %>
           </div>
         </div>
+    </div>
+  </div>
+</div>

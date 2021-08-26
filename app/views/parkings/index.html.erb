@@ -1,28 +1,29 @@
-  <h1 class = "text-center mt-5">Parkings</h1>
-  <div class='container align-left'>
-  
+<h1 class = "text-center mt-5">Parkings</h1>
+<div class='container align-left'>
   <%= link_to 'Put your parking on sale', new_parking_path, remote: true, class:"btn btn-outline-primary mx-5"  %>
-  </div>
+</div>
 
-  <br>
-    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3">
-      <div class="col-md-8 offset-2">
-        <div class="container">
-          <div id='parking_index' class="row">
-            <% @parkings.each do |parking| %>
-              <%= render 'parkings/parking', parking: parking %>
-            <% end %>
-        </div>
+<br>
+<div class="row row-cols-1 row-cols-md-1 row-cols-lg-3">
+  <div class="col-md-8 offset-2">
+    <div class="container">
+      <div id='parking_index' class="row">
+        <% @parkings.each do |parking| %>
+          <%= render 'parkings/parking', parking: parking %>
+        <% end %>
       </div>
     </div>
+  </div>
+</div>
     <%= render 'modal_parkings' %>
     
-  <div class='container align-left'>
-    <%= link_to_next_page @parkings, 'Next Page' %>
-    <br>
-  </div>
-  
+<div class='container align-left'>
+  <%= link_to_next_page @parkings, 'Next Page' %>
+  <br>
 </div>
+
+  
+
 
 
 
