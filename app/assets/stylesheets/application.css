@@ -15,6 +15,19 @@
  *= require_self
  */
 
+#sing {
+  padding-top: 20px;
+  padding-left: 200px;
+}
+
+#sing2 {
+  padding: 20px;
+}
+
+.sing_up {
+  background: #a5d6a7;
+}
+
 #burger {
   padding-right: 50px;
 }
