@@ -5,7 +5,15 @@ class ParkingsController < ApplicationController
   def index
     @q = Parking.ransack(params[:q])
     @parkings = @q.result(distinct: true).where("stock = 1").order("created_at DESC").page(params[:page]).per(10)
+
+    @parkings_co = []
+    Parking.all.each do |p|
+    @parkings_co.push(p.find_address)
+    end
+    # puts "***********   #{parkings_co} **********"
+
   end
+
 
   def like
     @parking = Parking.find(params[:id])
@@ -20,7 +28,7 @@ class ParkingsController < ApplicationController
      format.js
     end 
   end
-
+  
 
 
   # GET /parkings/1 or /parkings/1.json

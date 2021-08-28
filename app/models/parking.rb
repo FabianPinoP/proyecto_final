@@ -25,4 +25,9 @@ class Parking < ApplicationRecord
 	end
  end
 
+
+ def find_address
+  Geocoder.coordinates(self.address)
+ end
+
 end
