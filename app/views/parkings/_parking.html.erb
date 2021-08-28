@@ -1,6 +1,7 @@
 <div id="parking_<%= parking.id%>" class="col-md-4 ">
   <div class="card shadow-lg p-3 mb-5 bg-body rounded ">
     <%= image_tag parking.image.variant(resize: "200x200" ), :class => 'card-img-top img-fluid'%>
+    
     <div class="card-body">
       <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
         <div class="badge badge-primary"></div>

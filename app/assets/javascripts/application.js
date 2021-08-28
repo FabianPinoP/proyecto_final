@@ -17,5 +17,3 @@
 //= require Chart.bundle
 //= require jquery
 //= require_tree .
-
-
