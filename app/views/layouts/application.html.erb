@@ -94,22 +94,15 @@
       }).addTo(mymap);
 
       let arrayMarkers = []
-      console.log("1")
-     
+           
       data = $("#coordenadas_data").data()
-              
-      arrayMarkers.push(data.array) 
-      console.log("2")
+      data.array.forEach(element => {
       
-                
-      console.log(arrayMarkers)
-      console.log("3")
-
+      arrayMarkers.push(element)
+      })
+      
       arrayMarkers.forEach( element => {
-      
-      console.log("4")
-
-      L.marker(element[0]).addTo(mymap);
+        L.marker(element).addTo(mymap);
       });
       </script>
       </body>
