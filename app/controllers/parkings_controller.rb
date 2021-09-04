@@ -8,10 +8,9 @@ class ParkingsController < ApplicationController
 
     @parkings_co = []
     Parking.all.each do |p|
-    @parkings_co.push(p.find_address)
+    @parkings_co.push(coordenadas: p.find_address, address: p.address)   
     end
-    # puts "***********   #{parkings_co} **********"
-
+    #puts "+++++++#{@parkings_co}"
   end
 
 
