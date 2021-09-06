@@ -1,5 +1,5 @@
 <div class='container my-5'>
-    <h2 class=" text-center">relevant information</h2>
-    <%= pie_chart Parking.group(:address).count, title: 'parking lots by address' %>
-    <%= bar_chart Parking.group(:size).count, title: 'published sizes' %>
+    <h2 class=" text-center">Relevant information</h2>
+    <%= pie_chart Parking.group(:address).count, title: 'Parking lots by address' %>
+    <%= bar_chart Parking.group(:size).count, colors: [["#e74c3c", "#f0ad4e", "#5cb85c","#8f37aa"]], title: 'Published sizes' %>
 </div>
