@@ -3,11 +3,11 @@
     <%= image_tag parking.image.variant(resize: "200x200" ), :class => 'card-img-top img-fluid'%>
     
     <div class="card-body">
-      <h5 class="card-title"><%= parking.town %> Size: <%= parking.size %></h5>
+      <h5 class="card-title">Size: <%= parking.size %></h5>
         <div class="badge badge-primary"></div>
                
         <hr>
-        <p class="card-text"><%= parking.address %> / <%= parking.town %> / <%= parking.city %></p>
+        <p class="card-text"><%= parking.address %></p>
         <hr>
         <p class="card-text" >Price: $<%= parking.price %></p>
         <hr>
@@ -24,7 +24,7 @@
               <%= f.submit "Add to cart ", class:"btn btn-success p-2" %> 
             <% end %>
             <br>
-            <%= link_to 'See more', parking_path(parking.id), remote: true, class:"btn btn-primary"  %>
+            <%= link_to 'See more', parking_path(parking.id), remote: true, class:"btn btn-primary text-light"  %>
           </div>
         </div>
     </div>

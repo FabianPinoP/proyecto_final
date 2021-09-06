@@ -7,7 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+OrderItem.destroy_all
+Order.destroy_all
 Parking.destroy_all
+
+full_address = [
+            "tobago 1381, vitacura", "padre hurtado sur 302, las condes", "miraflores 106, buin", "los lingues 10840, el bosque", "el acero 10983, la florida",
+            "las azaleas 4521, la florida, santiago", "tenaun 1621, cerro navia", "toroya 2761, puente alto", "Jose Miguel Carrera 3204, San Miguel",
+            "Américo Vespucio 1501, Cerrillos"
+        ]
 
 
 20.times do
@@ -15,15 +23,10 @@ Parking.destroy_all
     price: rand(30000..400000),
     description: Faker::Lorem.sentence(word_count: 25),
     size: rand(1..3),
-    town: Faker::Address.state,
-    city: Faker::Address.city,
-    address: Faker::Address.street_address,
+    address: full_address.sample,
     user_id: 1
 )
 
     p.image.attach(io: File.open('public/wp4896663.jpg'), filename: 'wp4896663.jpg')
-
-
-
 
 end

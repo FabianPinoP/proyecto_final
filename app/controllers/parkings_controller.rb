@@ -68,12 +68,10 @@ class ParkingsController < ApplicationController
     respond_to do |format|
       if @parking.update(parking_params)
         format.html { redirect_to @parking, notice: "Parking was successfully updated." }
-        format.json { render :show, status: :ok, location: @parking }
-        format.js { render :update}
+        format.json { render :index, status: :ok, location: @parking }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @parking.errors, status: :unprocessable_entity }
-        format.js
       end
     end
   end
@@ -95,6 +93,6 @@ class ParkingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def parking_params
-      params.require(:parking).permit(:address, :description, :city, :price, :size, :town, :size_parking, :image, :user_id, :stock)
+      params.require(:parking).permit(:address, :description, :price, :size, :size_parking, :image, :user_id, :stock)
     end
 end

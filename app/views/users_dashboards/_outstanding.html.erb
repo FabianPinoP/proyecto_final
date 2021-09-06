@@ -1,35 +1,32 @@
 <div class='container'>
-<h2> outstanding</h2>
 
-    <div class="card">
-        <div class="card-header bg-dark text-light">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            <a href="<%= parkings_url%>" class="btn btn-outline-info btn-sm pull-right">Continue Shopping</a>
-            <div class="clearfix"></div>
-        </div>
-    <div class="card-body">
-        <% @order.order_items.includes(:parking).each do |item| %>
-    
-        <div class="row">
-            <div class="col-xs-2 col-md-2">
-                <%= image_tag item.parking.image.variant(resize: "200x200" ), :class => 'card-img-top' %>
+
+<div class="container mt-5 p-3 rounded cart">
+    <div class="row no-gutters">
+        <div class="col-md-">
+            <div class="product-details mr-2">
+               
+                <h2 class="mb-0 text-center ">outstanding</h2>
+                <div class="d-flex justify-content-between"><span></span>
+                    <div class="d-flex flex-row align-items-center"><span class="text-black-50">Price:</span>
+                    </div>
+                </div>
+                <% @order.order_items.includes(:parking).each do |item| %>
+                <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
+                    <div class="d-flex flex-row"> <%= image_tag item.parking.image.variant(resize: "150x150" ), :class => 'rounded', :id => "left-photo" %>
+                        <div class="ml-2"><span class="font-weight-bold d-block"><%= item.parking.address %> </span><span class="spec"><%= item.parking.description %></span></div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center"><span class="d-block"></span><span class="d-block ml-5 font-weight-bold" id='trash-icon'>$ <%= item.parking.price %></span>
+                    </div>
+                </div>
+                <% end %>
             </div>
-        <div class="col-xs-4 col-md-6">
-            <h4 class="product-name"><strong><%= item.parking.address %></strong></h4>
-            <h4><small><%= item.parking.description %></small></h4>
         </div>
-        <div class="col-xs-6 col-md-4 row">
-            <div class="col-xs-6 col-md-6 text-right" style="padding-top: 5px">
-                <h6><span class="text-muted">$</span></strong><strong><%= item.price%> </h6>
-                <%= link_to 'Delete item', delete_item_dashboard_users_dashboard_path(item.id) %>
-            </div>
-        <div class="col-xs-4 col-md-4">
-        </div>
-        <div class="col-xs-2 col-md-2">
-        </div>
-        </div>
-        </div>
-        <hr>
-        <% end %>
+        <br>
     </div>
+</div>
+
+
+
+
 </div>

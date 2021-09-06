@@ -95,6 +95,7 @@
       let arrayMarkers = []
           
       data = $("#coordenadas_data").data()
+      console.log(data.array);
      
       data.array.forEach(element => {
       
@@ -105,7 +106,6 @@
         L.marker(element.coordenadas).addTo(mymap)
         .bindTooltip(element.address)
         .openTooltip();
-        console.log(element.address)
       });
       </script>
       </body>
