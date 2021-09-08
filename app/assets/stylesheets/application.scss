@@ -15,6 +15,19 @@
  *= require_self
  */
 
+.cart-shopping {
+  padding-top: 80px;
+  margin-bottom: 200px;
+}
+
+.table-bordered {
+  margin-bottom: 300px;
+}
+
+.icon-trash {
+  color: red;
+}
+
 #mapid {
   height: 300px;
 }
@@ -40,8 +53,15 @@ footer {
   margin-bottom: 0;
 }
 
+#sing_up3 {
+  margin-top: 200px;
+  background: rgb(192, 188, 188);
+  margin-bottom: 200px;
+}
+
 #sing {
   padding-top: 20px;
+
   padding-left: 200px;
 }
 
@@ -50,8 +70,9 @@ footer {
 }
 
 .sing_up {
-  background: #a5d6a7;
-  margin-bottom: 200px;
+  margin-top: 200px;
+  background: rgb(192, 188, 188);
+  margin-bottom: 300px;
 }
 
 #burger {

@@ -2,15 +2,12 @@
 
 <h1>Dashboard</h1>
 <td><%= button_to "Parkings", public_parkings_path, method: :get %>
-<table>
+<table class="container table table-bordered"  >
   <thead>
-    <tr>
+    <tr class="text-center table-primary"  >
       <th>Users</th>
       <th>Email</th>
       <th>Admin</th>
-
-
-
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,8 +18,25 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.admin %></td>
-        <td><%= link_to 'Change Status', update_status_path(user.id), class:"btn btn-success"%></td>
-        <td><%= button_to "Cancel account", destroy_user_path(user.id), data: { confirm: "Are you sure?" }, method: :delete %></p></td>
+
+
+        <% if user.admin? %>
+          <td class="text-center"><%= link_to update_status_path(user.id) do%>
+            <i class="fas fa-toggle-on fa-2x icon-on"></i>
+          <% end %></td>
+        <% else %>
+          <td class="text-center"><%= link_to  update_status_path(user.id) do%>
+            <i class="fas fa-toggle-off fa-2x icon-off"></i>
+          <% end %></td>
+        <% end %>
+
+        <td><%= link_to destroy_user_path(user.id), data: { confirm: "Are you sure?" }, method: :delete do %>
+        <i class="fas fa-minus-circle fa-2x icon-trash"></i>
+        
+        <% end %>
+        </td>
+        
+
       </tr>
     <% end %>
   </tbody>

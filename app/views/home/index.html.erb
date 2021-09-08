@@ -1,7 +1,97 @@
-<% if user_signed_in?  %>
-    <%= render 'parkings/search' %>
-<% end %>
+    <div id="page-top">
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Your favorite place to find parking</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">You want to know more</p>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-xl block #{'active fw-bold' if current_page?(new_user_registration_path)}" %>
+                        <%# <a class="btn btn-primary btn-xl" href="#about">sdsdsdsdsdsd</a> %>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Let's talk</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">Do you have any questions for us?</p>
+                        <a class="btn btn-light btn-xl" href="#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Our services</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Sell your parking</h3>
+                            <p class="text-muted mb-0">From the comfort of your cell phone</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Buy your place</h3>
+                            <p class="text-muted mb-0">Purchase in payment installments</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">We are all over the world</h3>
+                            <p class="text-muted mb-0">Buy or sell anywhere on the planet</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">The most important thing is free</h3>
+                            <p class="text-muted mb-0">Because we believe in a free world</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio-->
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <%= render 'carrousel' %>
+
+            </div>
+        </div>
+
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <hr class="divider" />
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="col-lg-6">
+
+                            <div data-tf-widget="NLU5XAeB" style="width:100%;height:400px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
+                            </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
 
 
-<%= render 'info' %>
-<%= render 'carrousel' %>

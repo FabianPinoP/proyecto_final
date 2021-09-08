@@ -15,6 +15,6 @@
 //= require turbolinks
 //= require chartkick
 //= require Chart.bundle
+//= require scripts
 //= require_tree .
-
 
