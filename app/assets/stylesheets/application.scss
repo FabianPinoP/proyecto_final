@@ -57,16 +57,21 @@ footer {
   margin-top: 200px;
   background: rgb(192, 188, 188);
   margin-bottom: 200px;
+  padding-bottom: 50px;
 }
 
 #sing {
   padding-top: 20px;
-
   padding-left: 200px;
 }
 
 #sing2 {
+  background-image: url("mal.jpg");
   padding: 20px;
+}
+
+#sing2 > h1 {
+  color: rgb(192, 188, 188);
 }
 
 .sing_up {
