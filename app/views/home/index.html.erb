@@ -6,10 +6,26 @@
                         <h1 class="text-white font-weight-bold">Your favorite place to find parking</h1>
                         <hr class="divider" />
                     </div>
+                    <div>
+                        <h2 class="text-white font-weight-bold">Parking lot sizes</h2>
+                        <hr class="divider" />
+                        <h2 class=" font-weight-bold" id='size' >
+                        Small: Motorcycles
+                        <br>
+                        Medium: Citycars
+                        <br>
+                        Large: SUV, Jeep, Small trucks
+                        <br>
+                        
+                        XL: Trucks full sizes
+                        </h2>
+                        <hr class="divider" />
+
+                    </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">You want to know more</p>
+                        
           <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-xl block #{'active fw-bold' if current_page?(new_user_registration_path)}" %>
-                        <%# <a class="btn btn-primary btn-xl" href="#about">sdsdsdsdsdsd</a> %>
                     </div>
                 </div>
             </div>
@@ -23,6 +39,8 @@
                         <hr class="divider divider-light" />
                         <p class="text-white-75 mb-4">Do you have any questions for us?</p>
                         <a class="btn btn-light btn-xl" href="#contact">Contact</a>
+
+                        
                     </div>
                 </div>
             </div>

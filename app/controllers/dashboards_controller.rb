@@ -3,6 +3,8 @@ class DashboardsController < ApplicationController
 
     def index
         @users = User.all
+      @parkings = Parking.all
+
     end
 
     def parking
