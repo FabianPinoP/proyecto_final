@@ -19,7 +19,7 @@
   <div class="item form-group">
     <%= form.label :address, 'Address:' %>
     <div class="input-group">
-      <%= form.text_field :address, {:class=> "form-control", :placeholder=>"Introduzca la direccion..."} %>
+      <%= form.text_field :address, {:class=> "form-control", :placeholder=>"Example: loto 2010, providencia"} %>
     </div>
   </div>
 
@@ -28,7 +28,7 @@
   <div class="item form-group">
     <%= form.label :description, 'Description:' %>
     <div class="input-group">
-      <%= form.text_area :description, {:class=> "form-control", :placeholder=>"Introduzca descripcion..."} %>
+      <%= form.text_area :description, {:class=> "form-control", :placeholder=>"Example: parking with electric gate"} %>
     </div>
   </div>
 
@@ -40,7 +40,7 @@
   <div class="item form-group">
     <%= form.label :price, 'Price:' %>
     <div class="input-group">
-      <%= form.text_field :price, {:class=> "form-control", :placeholder=>"Introduzca un precio..."} %>
+      <%= form.text_field :price, {:class=> "form-control", :placeholder=>"Price ..."} %>
     </div>
   </div>
 
@@ -49,7 +49,7 @@
   <div class="item form-group">
     <%= form.label :size, 'Size:' %>
     <div class="input-group">
-      <%= form.select(:size, Parking.sizes.keys.to_a, {:prompt => 'Selecciona un tamaño'}, {class: "form-control"})  %>
+      <%= form.select(:size, Parking.sizes.keys.to_a, {:prompt => 'select a size'}, {class: "form-control"})  %>
       </div>
   </div>
 
