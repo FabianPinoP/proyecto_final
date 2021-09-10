@@ -6,6 +6,14 @@ class Parking < ApplicationRecord
   has_many :orders, through: :order_items
 
   validates_uniqueness_of :address
+  validates :price, presence: :true
+  validates :description, presence: :true
+  validates :size, presence: :true
+  validates :address, presence: :true
+
+
+
+
 
 
 
