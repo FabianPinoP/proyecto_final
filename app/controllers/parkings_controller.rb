@@ -4,7 +4,7 @@ class ParkingsController < ApplicationController
 
   def index
     @q = Parking.ransack(params[:q])
-    @parkings = @q.result(distinct: true).where("stock = 1").order("created_at DESC").page(params[:page]).per(10)
+    @parkings = @q.result(distinct: true).where("stock = 1").order("created_at DESC").page(params[:page]).per(9)
 
     @parkings_co = []
     Parking.all.each do |p|
