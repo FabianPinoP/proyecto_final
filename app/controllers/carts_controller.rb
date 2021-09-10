@@ -39,9 +39,9 @@ class CartsController < ApplicationController
                 ],
                 
                 back_urls: {
-                     success: 'https://sheltered-beach-45001.herokuapp.com/payment_success',
-                     failure: 'https://sheltered-beach-45001.herokuapp.com/',
-                     pending: 'https://sheltered-beach-45001.herokuapp.com/'
+                     success: 'http://www.parlots.xyz/payment_success',
+                     failure: 'http://www.parlots.xyz/',
+                     pending: 'http://www.parlots.xyz/'
                  },
                  auto_return: 'approved'
                 
@@ -59,9 +59,9 @@ class CartsController < ApplicationController
         @payment_id = params[:payment_id] 
         @type = params[:payment_type]
         if current_order.update_order(@payment_id, @type)
-            redirect_to root_path, notice: 'pago realizado'
+            redirect_to users_dashboard_path, notice: 'pago realizado'
         else
-            redirect_to root_path, flash: 'pago no realizado'
+            redirect_to users_dashboard_path, flash: 'pago no realizado'
         end
     end    
 end
