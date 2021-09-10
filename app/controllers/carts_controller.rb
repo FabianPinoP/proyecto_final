@@ -59,9 +59,9 @@ class CartsController < ApplicationController
         @payment_id = params[:payment_id] 
         @type = params[:payment_type]
         if current_order.update_order(@payment_id, @type)
-            redirect_to users_dashboards_path, notice: 'pago realizado'
+            redirect_to users_dashboards_index_path, notice: 'pago realizado'
         else
-            redirect_to users_dashboards_path, flash: 'pago no realizado'
+            redirect_to users_dashboards_index_path, flash: 'pago no realizado'
         end
     end    
 end
