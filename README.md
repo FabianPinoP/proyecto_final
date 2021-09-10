@@ -1,5 +1,7 @@
 # PARKINGS LOTS
 
+http://www.parlots.xyz/
+
 ## Project in development
 
 Use this app to: buy and sell parking spaces in a simple and fast way, you can upload your photos and edit your publications quickly, without complications.
@@ -33,6 +35,7 @@ this web application is in heroku
 - heroku run rails db:migrate
 - heroku run rails db:seed
 - herku open
+- url http://www.parlots.xyz/
 ```
 
 - available https://sheltered-beach-45001.herokuapp.com/
